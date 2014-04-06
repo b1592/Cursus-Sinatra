@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
+  <title>Home</title>
+  <link href="/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="navigation">
+      <div class="menu-wrapper">
+        <a href="javascript:void(0)" class="logo">
+        &nbsp;
+          <!-- <img src="https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png" alt=""> -->
+        </a>
+        <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
+        <div class="nav">
+          <ul id="navigation-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/over">Over</a></li>
+            <li><a href="/contact">Contact</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>
