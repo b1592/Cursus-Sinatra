@@ -37,3 +37,4 @@ end
 get '/style.css' do 
   scss :"/scss/style"
 end
+
