@@ -3,6 +3,10 @@
 @import "bitters/bitters";
 @import "neat/neat";
 
+a {
+  color: #ff4136;
+}
+
 // Change the grid settings
 $column: 90px;
 $gutter: 30px;

@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sass'
 require 'data_mapper'
 
 # need install dm-sqlite-adapter
@@ -32,7 +33,6 @@ end
 get '/contact' do
   erb :contact
 end
-
 
 get '/style.css' do 
   scss :"/scss/style"
