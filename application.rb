@@ -39,6 +39,11 @@ get '/posts/new' do
   erb :nieuwepost
 end
 
+get '/posts/:id' do
+  @post = Post.get(params[:id])
+  erb :post
+end
+
 post "/posts" do
   @post = Post.new(params[:post])
   @post.save
