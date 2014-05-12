@@ -1,0 +1,18 @@
+<h2>Nieuwe post</h2>
+
+<form action="/posts" method="post">
+  <label for="post_title">Titel:</label><br />
+  <input id="post_title" name="post[title]" type="text" value="" />
+  <br />
+
+  <label for="post_body">Inhoud:</label><br />
+  <textarea id="post_body" name="post[body]" rows="5"></textarea>
+  <br />
+
+  <label for="post_body">Auteur:</label><br />
+  <input id="post_author" name="post[author]" type="text" value="" />
+  <br />
+
+  <input type="submit" value="Create Post" />
+
+</form>

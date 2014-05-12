@@ -22,6 +22,8 @@ div.container {
 }
 
 header.navigation {
+  margin-bottom: 30px; 
+  
   $navigation-background: $dark-gray;
   $navigation-color: transparentize(white, 0.3);
   $navigation-color-hover: white;
