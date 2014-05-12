@@ -35,9 +35,6 @@ get '/contact' do
   erb :contact
 end
 
-<<<<<<< HEAD
-get '/style.css' do 
-=======
 get '/posts/new' do
   erb :nieuwepost
 end
@@ -49,6 +46,5 @@ post "/posts" do
 end
 
 get '/style.css' do
->>>>>>> 2bf013c48a4385052d785b9bbdd03a9b6b28a35e
   scss :"/scss/style"
 end
