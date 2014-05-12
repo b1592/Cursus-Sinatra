@@ -1,5 +1,7 @@
 require 'sinatra'
+require 'sass'
 require 'data_mapper'
+
 
 # need install dm-sqlite-adapter
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog.db")
@@ -33,8 +35,16 @@ get '/contact' do
   erb :contact
 end
 
-
-get '/style.css' do 
-  scss :"/scss/style"
+get '/posts/new' do
+  erb :nieuwepost
 end
 
+post "/posts" do
+  @post = Post.new(params[:post])
+  @post.save
+  redirect "/"
+end
+
+get '/style.css' do
+  scss :"/scss/style"
+end
