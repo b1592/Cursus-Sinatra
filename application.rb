@@ -1,7 +1,5 @@
-require 'sinatra'
-require 'sass'
-require 'data_mapper'
-
+require 'bundler'
+Bundler.require(:default)
 
 # need install dm-sqlite-adapter
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog.db")
@@ -37,11 +35,6 @@ end
 
 get '/posts/new' do
   erb :nieuwepost
-end
-
-get '/posts/:id' do
-  @post = Post.get(params[:id])
-  erb :post
 end
 
 post "/posts" do
