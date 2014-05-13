@@ -1,17 +1,23 @@
 require 'sinatra'
 
-get "/:name" do
-  # params = {:id => 1}
-  @name = params[:name]
-  erb :home
-  # "#{params[:name]}"
-end
-
 get '/' do
   erb :home
 end
 
-get 'posts/new' do
-  erb :nieuwepost
+get '/over' do
+  erb :over
+end
 
+get '/contact' do
+  erb :contact
+end
+
+get '/welkom/:naam' do
+  @naam = params[:naam]
+  erb :welkom
+
+end
+
+get '/posts/:id' do
+  @post = Post.get( params[:id] )
 end
