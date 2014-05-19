@@ -1,0 +1,8 @@
+<h2>Verwijder post</h2>
+
+<form action="/posts/<%= @post.id %>/delete" method="post">
+  <label for="post_title">Weet je zeker dat je deze post wilt verwijderen?</label><br />
+  
+  <input type="submit" value="Verwijder Post" /><a href='/'>Annuleren</a>
+
+</form>

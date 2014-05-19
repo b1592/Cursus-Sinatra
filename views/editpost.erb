@@ -1,0 +1,18 @@
+<h2>Aanpassen post</h2>
+
+<form action="/posts/<%= @post.id %>" method="post">
+  <label for="post_title">Titel:</label><br />
+  <input id="post_title" name="post[title]" type="text" value="<%= @post.title %>" />
+  <br />
+
+  <label for="post_body">Inhoud:</label><br />
+  <textarea id="post_body" name="post[body]" rows="5"><%= @post.body %></textarea>
+  <br />
+
+  <label for="post_body">Auteur:</label><br />
+  <input id="post_author" name="post[author]" type="text" value="<%= @post.author %>" />
+  <br />
+
+  <input type="submit" value="Verander Post" />
+
+</form>

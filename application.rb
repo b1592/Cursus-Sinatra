@@ -20,6 +20,8 @@ DataMapper.finalize
 # automatically create the post table
 Post.auto_upgrade!
 
+enable :sessions
+
 get '/' do
   @posts = Post.all
   erb :home
@@ -33,9 +35,57 @@ get '/contact' do
   erb :contact
 end
 
+get '/login' do
+  erb :login
+end
+
+post '/login' do
+  if params[:username] == 'boris' && params[:password] == 'password'
+    session[:logged_in] = true
+  else
+    session[:logged_in] = false
+  end
+
+  redirect '/'
+end
+
+get '/logout' do
+  session[:logged_in] = false
+  redirect '/'
+end
+
 get '/posts/new' do
   erb :nieuwepost
 end
+
+get '/posts/:id' do
+  @post = Post.get(params[:id])
+  erb :post
+end
+
+get '/posts/:id/edit' do
+  @post = Post.get(params[:id])
+  erb :editpost
+end
+
+post '/posts/:id' do
+  @post = Post.get(params[:id])
+  @post.attributes = params[:post]
+  @post.save
+  redirect '/'
+end
+
+get '/posts/:id/delete' do
+  @post = Post.get(params[:id])
+  erb :deletepost
+end
+
+post '/posts/:id/delete' do
+  @post = Post.get(params[:id])
+  @post.destroy
+  redirect '/'
+end
+
 
 post "/posts" do
   @post = Post.new(params[:post])

@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
   <article class="type-system-geometric">
 
-    <h1><%= post.title %></h1>
+    <h1><a href="/posts/<%= post.id %>"><%= post.title %></a></h1>
 
     <p class="date"><%= post.created_at.strftime("%d-%m-%Y") %></p>
     <p><%= post.body.length < 100 ? post.body : "#{post.body[0..100]}..." %></p>
@@ -9,8 +9,11 @@
     <hr>
     <p class="author"><%= post.author %></p>
 
+    <% if session[:logged_in] %>
+    <a href="/posts/<%= post.id %>/edit">Verander deze post</a> | <a href="/posts/<%= post.id %>/delete">Verwijder deze post</a>
+    <% end %>
   </article>
   <hr>
 <% end %>
 
-<a href="google.com">Een link naar Google.</a>
+<a href="/posts/new">Nieuwe post</a>

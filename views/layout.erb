@@ -25,7 +25,11 @@
             <li><a href="/">Home</a></li>
             <li><a href="/over">Over</a></li>
             <li><a href="/contact">Contact</a></li>
-            
+            <% if session[:logged_in] %>
+            <li><a href="/logout">Log uit</a></li>
+            <% else %>
+            <li><a href="/login">Log in</a></li>
+            <% end %>
           </ul>
         </div>
       </div>
