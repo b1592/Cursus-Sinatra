@@ -55,6 +55,7 @@ get '/logout' do
 end
 
 get '/posts/new' do
+  requires_login
   erb :nieuwepost
 end
 
@@ -64,6 +65,7 @@ get '/posts/:id' do
 end
 
 get '/posts/:id/edit' do
+  requires_login
   @post = Post.get(params[:id])
   erb :editpost
 end
@@ -76,6 +78,7 @@ post '/posts/:id' do
 end
 
 get '/posts/:id/delete' do
+  requires_login
   @post = Post.get(params[:id])
   erb :deletepost
 end
@@ -95,4 +98,8 @@ end
 
 get '/style.css' do
   scss :"/scss/style"
+end
+
+def requires_login
+  redirect '/' unless session[:logged_in]
 end
