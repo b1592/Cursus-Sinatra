@@ -9,4 +9,7 @@
 <hr>
 <p class="author"><%= @post.author %></p>
 
+<% if session[:logged_in] %>
+<a href="/posts/<%= @post.id %>/edit">Verander deze post</a> | <a href="/posts/<%= @post.id %>/delete">Verwijder deze post</a>
+<% end %>
 </article>

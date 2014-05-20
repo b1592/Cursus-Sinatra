@@ -16,4 +16,6 @@
   <hr>
 <% end %>
 
+<% if session[:logged_in] %>
 <a href="/posts/new">Nieuwe post</a>
+<% end %>
